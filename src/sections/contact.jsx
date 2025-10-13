@@ -141,7 +141,7 @@ const Contact = React.memo(({ isMobile }) => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your name"
-                className="w-full p-4 border rounded-lg  border-[#B084E1] bg-transparent text-[#9b63c9] placeholder:text-[#9b63c9]  text-base font-fraunces   outline-transparent focus:border-[2px]  focus:border-[#B084E1]"
+                className="w-full p-4 border rounded-lg  border-[#B084E1] bg-transparent text-[#9b63c9] placeholder:text-[#9b63c9]  text-base font-fraunces   outline-none   focus:border-[#B084E1]"
               
               />
             </div>
@@ -164,7 +164,7 @@ const Contact = React.memo(({ isMobile }) => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your email"
-                className="w-full p-4 border rounded-lg  border-[#B084E1] bg-transparent text-[#9b63c9] placeholder:text-[#9b63c9]  text-base font-fraunces   outline-transparent focus:border-[2px]  focus:border-[#B084E1]"
+                className="w-full p-4 border rounded-lg  border-[#B084E1] bg-transparent text-[#9b63c9] placeholder:text-[#9b63c9]  text-base font-fraunces   outline-none focus:border-[#B084E1]"
               />
             </motion.div>
            </div>
@@ -189,7 +189,7 @@ const Contact = React.memo(({ isMobile }) => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your phone number"
-                className="w-full p-4 border rounded-lg  border-[#B084E1] bg-transparent text-[#9b63c9] placeholder:text-[#9b63c9]  text-base font-fraunces   outline-transparent focus:border-[2px]  focus:border-[#B084E1]"
+                className="w-full p-4 border rounded-lg  border-[#B084E1] bg-transparent text-[#9b63c9] placeholder:text-[#9b63c9]  text-base font-fraunces   outline-none focus:border-[#B084E1]"
               
               />
             </div>
@@ -212,7 +212,7 @@ const Contact = React.memo(({ isMobile }) => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your district"
-                className="w-full p-4 border rounded-lg  border-[#B084E1] bg-transparent text-[#9b63c9] placeholder:text-[#9b63c9]  text-base font-fraunces   outline-transparent focus:border-[2px]  focus:border-[#B084E1]"
+                className="w-full p-4 border rounded-lg  border-[#B084E1] bg-transparent text-[#9b63c9] placeholder:text-[#9b63c9]  text-base font-fraunces   outline-none focus:border-[#B084E1]"
               />
             </div>
             </div>
@@ -235,7 +235,7 @@ const Contact = React.memo(({ isMobile }) => {
                 onChange={handleChange}
                 required
                 placeholder="Write your message"
-                className="w-full p-4 border rounded-lg  border-[#B084E1] bg-transparent text-[#9b63c9] placeholder:text-[#9b63c9]  text-base font-fraunces   outline-transparent focus:border-[2px]  focus:border-[#B084E1]"
+                className="w-full p-4 border rounded-lg  border-[#B084E1] bg-transparent text-[#9b63c9] placeholder:text-[#9b63c9]  text-base font-fraunces   outline-none focus:border-[#B084E1]"
               />
             </div>
             <motion.button

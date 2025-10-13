@@ -101,7 +101,7 @@ const scrollToSection = useCallback((ref, sectionName) => {
       smoothWheel: true,
       smoothTouch: false,
       touchMultiplier: 2,
-      wheelMultiplier: 0.8,
+      wheelMultiplier: 0.8, 
     }}
   />
       <Header
