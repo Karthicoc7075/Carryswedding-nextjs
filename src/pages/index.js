@@ -33,24 +33,26 @@ export default function Home() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const scrollToSection = useCallback((ref, sectionName) => {
-    if (lenisRef.current?.lenis) {
-      const target = ref.current;
-      if (target) {
-        lenisRef.current.lenis.scrollTo(target, {
-          offset: 0,
-          duration: 1.2,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-        });
-      }
-    } else {
-      ref.current?.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start' 
+const scrollToSection = useCallback((ref, sectionName) => {
+  if (lenisRef.current?.lenis) {
+    const target = ref.current;
+    
+    if (target) {
+      lenisRef.current.lenis.scrollTo(target, {
+        offset: 0,
+        duration: 2.5, // Control the button click scroll speed here
+        easing: (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
+        lock: true
       });
     }
-    setActiveSection(sectionName);
-  }, []);
+  } else {
+    ref.current?.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'start' 
+    });
+  }
+  setActiveSection(sectionName);
+}, []);
 
   useEffect(() => {
     const observerOptions = {
@@ -91,17 +93,17 @@ export default function Home() {
   
   return (
     <div className="App">
-      <ReactLenis 
-        root 
-        ref={lenisRef}
-        options={{
-          lerp: 0.1,
-          duration: 1.2,
-          smoothWheel: true,
-          smoothTouch: false,
-          touchMultiplier: 2,
-        }}
-      />
+       <ReactLenis 
+    root 
+    ref={lenisRef}
+    options={{
+      lerp: 0.05, 
+      smoothWheel: true,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      wheelMultiplier: 0.8,
+    }}
+  />
       <Header
         mobile={isMobile}
         scrollToSection={scrollToSection}
