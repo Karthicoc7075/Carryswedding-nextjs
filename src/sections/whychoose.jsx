@@ -8,6 +8,15 @@ const Whychoose = React.memo(({ isMobile }  ) => {
  const text ="Trusted"
  const title = ["Why" ,"Choose", "Us"]
  const desc = ["Not", "just", "a", "Planner." ,"A", "Partner."]
+
+ const hasAnimated = useState(false);
+
+
+ setTimeout(() => {
+  if(!hasAnimated){
+    hasAnimated=true;
+  }
+ }, 1000);
   useEffect(() => {
 
     const designCountNode = designCountRef.current;
@@ -16,7 +25,7 @@ const Whychoose = React.memo(({ isMobile }  ) => {
 
     const controls = animate(0, 300, {
       duration: 2,
-      delay: 1.7,
+      delay: 2,
       onUpdate(value) {
         designCountNode.textContent = `${Math.round(value).toLocaleString()}+`; // Format with commas for readability
       },
@@ -25,7 +34,7 @@ const Whychoose = React.memo(({ isMobile }  ) => {
     return () => controls.stop();
 
    
-  }, []);
+  },[ hasAnimated]);
 
   useEffect(() => {
 
@@ -34,14 +43,14 @@ const Whychoose = React.memo(({ isMobile }  ) => {
 
     const controls = animate(0, 99, {
       duration: 2,
-      delay: 1.8,
+      delay: 2,
       onUpdate(value) {
         satisfactionRateNode.textContent = `${Math.round(value)}%`; // Format with commas for readability
       },
     });
 
     return () => controls.stop();
-  }, []);
+  }, [hasAnimated]);
 
   return (
     <section className="relative p-12 px-8  flex items-center justify-center bg-[#B084E1] w-full ">
