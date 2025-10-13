@@ -1,56 +1,48 @@
-import { whileInView,motion, animate } from "framer-motion";
+import { useInView,motion, animate } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 const Whychoose = React.memo(({ isMobile }  ) => {
 
-
+const ref = useRef(null);
   const designCountRef = useRef(null);
   const satisfactionRateRef = useRef(null);
  const text ="Trusted"
  const title = ["Why" ,"Choose", "Us"]
  const desc = ["Not", "just", "a", "Planner." ,"A", "Partner."]
-
- const hasAnimated = useState(false);
-
-
- setTimeout(() => {
-  if(!hasAnimated){
-    hasAnimated=true;
-  }
- }, 1000);
+const isInView = useInView(ref, { once: true, margin: "-100px" }); 
   useEffect(() => {
 
     const designCountNode = designCountRef.current;
 
-    if(!designCountNode) return;
+    if(!isInView || !designCountNode) return;
 
     const controls = animate(0, 300, {
       duration: 2,
-      delay: 2,
+      delay: .2,
       onUpdate(value) {
-        designCountNode.textContent = `${Math.round(value).toLocaleString()}+`; // Format with commas for readability
+        designCountNode.textContent = `${Math.round(value).toLocaleString()}+`; 
       },
     });
 
     return () => controls.stop();
 
    
-  },[ hasAnimated]);
+  },[isInView]);
 
   useEffect(() => {
 
     const satisfactionRateNode = satisfactionRateRef.current;
-    if(!satisfactionRateNode) return;
+    if(!isInView || !satisfactionRateNode) return;
 
     const controls = animate(0, 99, {
       duration: 2,
-      delay: 2,
+      delay: .4,
       onUpdate(value) {
-        satisfactionRateNode.textContent = `${Math.round(value)}%`; // Format with commas for readability
+        satisfactionRateNode.textContent = `${Math.round(value)}%`; 
       },
     });
 
     return () => controls.stop();
-  }, [hasAnimated]);
+  }, [isInView]);
 
   return (
     <section className="relative p-12 px-8  flex items-center justify-center bg-[#B084E1] w-full ">
@@ -117,6 +109,7 @@ const Whychoose = React.memo(({ isMobile }  ) => {
           </motion.p>
           <div className="flex flex-wrap justify-between md:flex-row flex-col items-center">
             <motion.div
+            ref={ref}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: isMobile ? 1 : 1.4 }}
