@@ -39,8 +39,8 @@ const Footer = React.memo(() => {
             </div>
             <div className="footer-item flex items-start gap-4">
               <Image src="/icons/call-icon.png" alt="Call icon" width={24} height={24} className="mt-1 flex-shrink-0" />
-              <div className="flex flex-col gap-2 ">
-                <a href="tel:8122697732" className="text-base  text-[#b084e1] font-medium no-underline hover:underline">+91 81226 97732</a>
+              <div className="flex flex-col gap-2 ">x
+                <a href="tel:8122697732" className="tet-base  text-[#b084e1] font-medium no-underline hover:underline">+91 81226 97732</a>
                 <a href="tel:9514441965" className="text-base text-[#b084e1] font-medium no-underline hover:underline">+91 95144 41965</a>
                 <a href="tel:9514419941" className="text-base text-[#b084e1] font-medium no-underline hover:underline">+91 95144 19941</a>
               </div>
