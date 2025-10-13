@@ -1,115 +1,146 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { useRef, useState, useEffect, useCallback } from "react";
+import Header from "@/components/header";
+import Hero from "@/sections/hero";
+import About from "@/sections/about";
+import { ToastContainer } from "react-toastify";
+import Whychoose from "@/sections/whychoose";
+import Location from "@/sections/location";
+import Services from "@/sections/services";
+import Highlight from "@/sections/highlight";
+import Packages from "@/sections/packages";
+import Contact from "@/sections/contact";
+import Footer from "@/sections/footer";
+import { ReactLenis } from 'lenis/react';
 
 export default function Home() {
+  const heroRef = useRef(null);
+  const aboutRef = useRef(null);
+  const servicesRef = useRef(null);
+  const packagesRef = useRef(null);
+  const contactRef = useRef(null);
+  const [activeSection, setActiveSection] = useState('hero');
+  const [isMobile, setIsMobile] = useState(false);
+  const lenisRef = useRef(null);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);  
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const scrollToSection = useCallback((ref, sectionName) => {
+    if (lenisRef.current?.lenis) {
+      const target = ref.current;
+      if (target) {
+        lenisRef.current.lenis.scrollTo(target, {
+          offset: 0,
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        });
+      }
+    } else {
+      ref.current?.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }
+    setActiveSection(sectionName);
+  }, []);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.dataset.section);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const sections = [
+      heroRef.current,
+      aboutRef.current,
+      servicesRef.current,
+      packagesRef.current,
+      contactRef.current,
+    ];
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
+  
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20`}
-    >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="App">
+      <ReactLenis 
+        root 
+        ref={lenisRef}
+        options={{
+          lerp: 0.1,
+          duration: 1.2,
+          smoothWheel: true,
+          smoothTouch: false,
+          touchMultiplier: 2,
+        }}
+      />
+      <Header
+        mobile={isMobile}
+        scrollToSection={scrollToSection}
+        activeSection={activeSection}
+        refs={{
+          heroRef,
+          aboutRef,
+          servicesRef,
+          packagesRef,
+          contactRef,
+        }} 
+      />
+      <ToastContainer />
+      
+      <section ref={heroRef} data-section="hero">
+        <Hero />
+      </section>
+      
+      <section ref={aboutRef} data-section="about">
+        <About />
+      </section>
+      <Whychoose isMobile={isMobile} />
+      
+      <section ref={servicesRef} data-section="service">
+        <Services isMobile={isMobile} />
+      </section>
+      
+      <Highlight />
+      
+      <section ref={packagesRef} data-section="package">
+        <Packages />
+      </section>
+      
+      <section ref={contactRef} data-section="contact">
+        <Contact isMobile={isMobile} />
+      </section>
+      
+      <Location />
+      <Footer />
     </div>
   );
 }
