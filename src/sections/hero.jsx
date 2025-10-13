@@ -7,11 +7,11 @@ const Hero = React.memo(() => {
   return (
     <section
       id="#"
-      className="relative flex items-end  h-[100vh] overflow-hidden"
+      className="relative flex items-end  h-[100dvh] overflow-hidden transition-all duration-700"
     >
       <div className="absolute inset-0 -z-10">
-        <div  className="w-[100vw]  h-[100vh] " >
-        <img src={'/images/hero-background.webp'} alt="Hero Background" className='w-full h-full object-cover' />
+        <div  className="w-[100dvw]  h-full max-h-[100dvh] transition-all duration-700 ease-in-out group " >
+        <img src={'/images/hero-background.webp'} alt="Hero Background" className='w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 ' />
         </div>
       
       </div>
