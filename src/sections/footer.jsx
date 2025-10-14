@@ -76,7 +76,7 @@ const Footer = React.memo(() => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: .8, delay: .8 }}
           className="flex flex-col  items-center text-center flex-1 min-w-[280px]">
-            
+
           <Image src="/images/footer-img.webp" alt="Footer Image" width={240} height={200} className="object-cover mb-6" />
 
             
