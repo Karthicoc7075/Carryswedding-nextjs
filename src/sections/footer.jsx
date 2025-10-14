@@ -77,7 +77,7 @@ const Footer = React.memo(() => {
             transition={{ duration: .8, delay: .8 }}
           className="flex flex-col  items-center text-center flex-1 min-w-[280px]">
             
-          <Image width={240} height={200} className="object-cover mb-6" src="/images/footer-img.png" alt="Footer Image" />
+          <Image width={240} height={200} className="object-cover mb-6" src="/images/footer-img.webp" alt="Footer Image" />
 
             
             <div className="flex gap-4 mb-4">

@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
    useEffect(() => {
      const timer = setTimeout(() => {
        setLoading(false);
-     }, 2000); // Simulate a loading delay
+     }, 2000); 
 
      return () => clearTimeout(timer);
    }, []);

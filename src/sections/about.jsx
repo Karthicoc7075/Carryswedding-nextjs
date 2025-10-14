@@ -35,7 +35,7 @@ const About = React.memo(() => {
             initial={{ opacity: 0, rotate: 0 }}
             whileInView={{ opacity: 1, rotate: 70 }}
             transition={{ duration: .8, delay: .6 }}
-            className="absolute top-[-32%] left-[-2%] w-[320px] sm:w-[380px] h-auto object-cover mb-6 rotate-[70deg]" src={'/images/about-design.png'} alt="Footer Image" />
+            className="absolute top-[-32%] left-[-2%] w-[320px] sm:w-[380px] h-auto object-cover mb-6 rotate-[70deg]" src={'/images/about-design.webp'} alt="Footer Image" />
 
 
             <motion.h2

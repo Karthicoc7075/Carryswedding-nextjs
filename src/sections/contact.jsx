@@ -111,7 +111,7 @@ const Contact = React.memo(({ isMobile }) => {
           transition={{ duration: 0.5 }}
           className="flex justify-center    md:flex w-full">
             <Image
-              src="/images/test-04.png" 
+              src="/images/contact-img.webp" 
               alt="Contact Us"
               width={440}
               height={450}

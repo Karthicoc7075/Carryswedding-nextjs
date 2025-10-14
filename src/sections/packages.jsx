@@ -218,7 +218,7 @@ const [indicatorStyle, setIndicatorStyle] = useState({});
   className="absolute top-0 right-[-3%] z-10 w-[140px] sm:w-[200px] md:w-[300px] h-auto mb-6"
 >
   <Image
-    src="/images/package-design.png"
+    src="/images/package-design.webp"
     alt="Package Design Right"
     width={300}
     height={300}
@@ -234,7 +234,7 @@ const [indicatorStyle, setIndicatorStyle] = useState({});
   className="absolute top-0 left-[-3%] z-10 w-[140px] sm:w-[200px] md:w-[300px] h-auto mb-6"
 >
   <Image
-    src="/images/package-design.png"
+    src="/images/package-design.webp"
     alt="Package Design Left"
     width={300}
     height={300}
