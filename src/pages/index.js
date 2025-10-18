@@ -40,9 +40,9 @@ const scrollToSection = useCallback((ref, sectionName) => {
     if (target) {
       lenisRef.current.lenis.scrollTo(target, {
         offset: 0,
-        duration: 2.5, // Control the button click scroll speed here
+        duration: 2, 
         easing: (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
-        lock: true
+        lock: false
       });
     }
   } else {
@@ -61,13 +61,17 @@ const scrollToSection = useCallback((ref, sectionName) => {
       threshold: 0
     };
 
-    const observerCallback = (entries) => {
+  let timeoutId;
+  const observerCallback = (entries) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.dataset.section);
         }
       });
-    };
+    }, 50);
+  };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
@@ -83,12 +87,14 @@ const scrollToSection = useCallback((ref, sectionName) => {
       if (section) observer.observe(section);
     });
 
-    return () => {
-      sections.forEach((section) => {
-        if (section) observer.unobserve(section);
-      });
-    };
-  }, []);
+     return () => {
+    clearTimeout(timeoutId);
+    sections.forEach((section) => {
+      if (section) observer.unobserve(section);
+    });
+    observer.disconnect();
+  };
+}, []);
 
   
   return (
@@ -97,11 +103,11 @@ const scrollToSection = useCallback((ref, sectionName) => {
     root 
     ref={lenisRef}
     options={{
-      lerp: 0.05, 
+      lerp: 0.08, 
       smoothWheel: true,
       smoothTouch: false,
       touchMultiplier: 2,
-      wheelMultiplier: 0.8, 
+      wheelMultiplier: .8, 
     }}
   />
       <Header

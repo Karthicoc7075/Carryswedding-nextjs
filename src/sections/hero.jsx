@@ -6,15 +6,21 @@ const Hero = React.memo(() => {
   
   return (
     <section
-      id="#"
       className="relative flex items-end  h-[100dvh] overflow-hidden transition-all duration-700"
     >
-      <div className="absolute inset-0 -z-10">
-        <div  className="w-[100dvw]  h-full max-h-[100dvh] transition-all duration-700 ease-in-out  " >
-        <img src={'/images/hero-background.webp'} alt="Traditional wedding mandap decoration in TamilNadu" className='w-full h-full object-cover transition-transform duration-700 ease-in-out  ' />
-        </div>
-      
-      </div>
+    <motion.div 
+  className="absolute inset-0 -z-10 overflow-hidden"
+  whileHover={{ scale: 1.05 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+>
+  <img 
+    src={'/images/hero-background.webp'} 
+    alt="Traditional wedding mandap decoration in TamilNadu" 
+    className='w-full h-full object-cover'
+    loading="eager"
+    decoding="async"
+  />
+</motion.div>
 
       <motion.div 
           initial={{ opacity: 0, y: 80 }}     
