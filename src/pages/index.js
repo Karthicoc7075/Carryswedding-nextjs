@@ -1,3 +1,4 @@
+"use client";
 import { useRef, useState, useEffect, useCallback } from "react";
 import Header from "@/components/header";
 import Hero from "@/sections/hero";
@@ -103,11 +104,11 @@ const scrollToSection = useCallback((ref, sectionName) => {
     root 
     ref={lenisRef}
     options={{
-      lerp: 0.08, 
+      lerp: 0.2, 
+        duration: 1.2,
+      orientation: 'vertical',
       smoothWheel: true,
       smoothTouch: false,
-      touchMultiplier: 2,
-      wheelMultiplier: .8, 
     }}
   />
       <Header

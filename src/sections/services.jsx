@@ -126,8 +126,8 @@ const ServicesSection = React.memo(({ isMobile }) => {
                     fill
                     className="object-cover rounded-[16px]"
                     sizes="(max-width: 768px) 190px, 240px"
-                    loading="eager"
-                  />
+                    loading="lazy"
+  />
                 </div>
                 <h3 className="font-montserrat text-base font-medium text-gray-900">
                   {service.title}

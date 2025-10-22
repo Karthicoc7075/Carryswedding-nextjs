@@ -17,8 +17,7 @@ const Hero = React.memo(() => {
     src={'/images/hero-background.webp'} 
     alt="Traditional wedding mandap decoration in TamilNadu" 
     className='w-full h-full object-cover'
-    loading="eager"
-    decoding="async"
+    fetchPriority='high'
   />
 </motion.div>
 

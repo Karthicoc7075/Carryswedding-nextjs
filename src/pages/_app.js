@@ -5,17 +5,17 @@ import Loader from "@/components/loader";
 export default function App({ Component, pageProps }) {
    const [loading, setLoading] = useState(true);
 
-   useEffect(() => {
-     const timer = setTimeout(() => {
-       setLoading(false);
-     }, 2000); 
+  //  useEffect(() => {
+  //    const timer = setTimeout(() => {
+  //      setLoading(false);
+  //    }, 700); 
 
-     return () => clearTimeout(timer);
-   }, []);
+  //    return () => clearTimeout(timer);
+  //  }, []);
 
-   if (loading) {
-     return <Loader />;
-   }
+  //  if (loading) {
+  //    return <Loader />;
+  //  }
 
   return <Component {...pageProps} />;
 }

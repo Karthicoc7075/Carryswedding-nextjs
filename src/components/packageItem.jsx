@@ -72,6 +72,7 @@ const MotionImage = useMemo(() => motion(Image), []);
                     src={service.image}
                     alt={service.title} 
                    fill
+                   loading='lazy'
                   className=" object-fit-cover rounded-[32px]"/>
     </div>
            

@@ -116,6 +116,7 @@ const Contact = React.memo(({ isMobile }) => {
               width={440}
               height={450}
               className=" md:block   " 
+               loading="lazy"
             />
           </motion.div>
 

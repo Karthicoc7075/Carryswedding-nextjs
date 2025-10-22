@@ -239,6 +239,7 @@ const [indicatorStyle, setIndicatorStyle] = useState({});
     width={300}
     height={300}
     className="w-full h-auto object-cover"
+     loading="lazy"
   />
 </motion.div>
 <div className="flex justify-center mt-12 px-4">

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion';
 
 const About = React.memo(() => {
+  const MotionImage = motion(Image);
   return (
     <section id="about" className="relative py-32 sm:px-8  flex flex-col items-center justify-center w-full z-[1]">
     
@@ -28,13 +29,15 @@ const About = React.memo(() => {
                 width={250}
                 height={250}
                 className="relative z-10 w-[200px] h-[260px]  sm:w-[220px] sm:h-[290px]  rounded-r-[100px] object-cover mx-auto"
-                priority
+                 loading="lazy"
               />
 
-            <motion.img 
+            <MotionImage
             initial={{ opacity: 0, rotate: 0 }}
             whileInView={{ opacity: 1, rotate: 70 }}
             transition={{ duration: .8, delay: .6 }}
+            width={380}
+            height={380}
             className="absolute top-[-32%] left-[-2%] w-[320px] sm:w-[380px] h-auto object-cover mb-6 rotate-[70deg]" src={'/images/about-design.webp'} alt="Design Image" />
 
 

@@ -17,11 +17,7 @@ const Highlight = React.memo(() => {
           fill
           className="w-screen h-[100vh] object-cover will-change-auto"
           sizes="100vw"
-          
-          priority 
-          style={{
-            imageRendering: '-webkit-optimize-contrast',
-          }}
+          loading="lazy"
         />
       </motion.div>
 

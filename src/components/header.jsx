@@ -40,12 +40,12 @@ const Header = React.memo(({ scrollToSection, activeSection, refs }) => {
                   scrollToSection(refs.heroRef);
                 }} className="flex justify-center px-5  items-center bg-white w-[100px] h-[100px] rounded-full z-[1001] shadow-xl    md:w-[132px] md:h-[132px] md:rounded-xl">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.webp"
             alt="Carys Wedding Logo"
-            width={120}
-            height={120}
+            width="120"
+            height="120"
             className="h-[88px] w-[88px] md:h-[120px] md:w-[120px] object-fit-cover"
-            priority 
+             fetchpriority="high"
     
           />
         </a>

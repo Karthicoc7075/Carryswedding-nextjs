@@ -86,7 +86,7 @@ const Location = React.memo(() => {
             alt="Location"
             fill
             className="object-cover "
-            
+             loading="lazy"
           />
         </motion.div>
       </div>
