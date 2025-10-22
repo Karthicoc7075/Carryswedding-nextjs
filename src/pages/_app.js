@@ -5,17 +5,25 @@ import Loader from "@/components/loader";
 export default function App({ Component, pageProps }) {
    const [loading, setLoading] = useState(true);
 
-  //  useEffect(() => {
-  //    const timer = setTimeout(() => {
-  //      setLoading(false);
-  //    }, 700); 
+    useEffect(() => {
+    const heroImageUrl = '/images/hero-background.webp';
+    
+    const img = new Image();
+    img.src = heroImageUrl;
+    
+    img.onload = () => {
+      setLoading(false);
+    };
+    
+    img.onerror = () => {
+      setLoading(false);
+    };
+  }, []);
 
-  //    return () => clearTimeout(timer);
-  //  }, []);
 
-  //  if (loading) {
-  //    return <Loader />;
-  //  }
+   if (loading) {
+     return <Loader />;
+   }
 
   return <Component {...pageProps} />;
 }
