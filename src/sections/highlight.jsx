@@ -13,7 +13,7 @@ const Highlight = React.memo(() => {
       className="absolute inset-0 -z-10">
         <Image
           src={'/images/highlight-background.webp'}
-          alt="Highlight Background"
+          alt="Wedding celebration highlight with traditional decor"
           fill
           className="w-screen h-[100vh] object-cover will-change-auto"
           sizes="100vw"

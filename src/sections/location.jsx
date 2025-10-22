@@ -83,7 +83,7 @@ const Location = React.memo(() => {
         className=" relative w-[260px] h-[280px] md:w-[360px] md:h-[430px] ">
           <Image
             src={'/images/location.png'}
-            alt="Location"
+            alt="Map of Tamil Nadu showing service locations"
             fill
             className="object-cover "
              loading="lazy"

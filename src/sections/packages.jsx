@@ -19,6 +19,7 @@ import Image from 'next/image';
                         'Food for 500 people',
                     ],
                     image: '/images/categ-1.webp',
+                    alt: 'High Class Food Service at Carys Wedding'
                 },
                 {
                     title: 'DJ Setup',
@@ -27,6 +28,7 @@ import Image from 'next/image';
                         'Smoke Machine'
                     ],
                     image: '/images/categ-2.webp',
+                    alt: 'DJ Setup Service at Carys Wedding'
                 },
                 {
                     title: 'Stage Decor',
@@ -42,6 +44,7 @@ import Image from 'next/image';
                       'Wedding Album ( upto 300 Photos )'
                     ],
                     image: '/images/categ-4.webp',
+                    alt: 'Photo & Video Service at Carys Wedding'
                 },
                 {
                     title: 'Snacks Counter',
@@ -50,6 +53,7 @@ import Image from 'next/image';
                         'Ice Cream ( 300 Members )'
                     ],
                     image: '/images/categ-5.webp',
+                    alt: 'Snacks Counter Service at Carys Wedding'
                 }
             ],
         },
@@ -67,6 +71,7 @@ import Image from 'next/image';
                         'Food for 700 people',
                     ],
                     image: '/images/categ-1.webp',
+                    alt: 'High Class Food Service at Carys Wedding'
                 },
                 {
                     title: 'DJ Setup',
@@ -76,6 +81,7 @@ import Image from 'next/image';
                         'Dance Floor'
                     ],
                     image: '/images/categ-2.webp',
+                    alt: 'DJ Setup Service at Carys Wedding'
                 },
                 {
                     title: 'Stage Decor',
@@ -83,6 +89,7 @@ import Image from 'next/image';
                         'Design your dream decor here',
                     ],
                     image: '/images/categ-3.webp',
+                    alt: 'Stage Decor Service at Carys Wedding'
                 },
                 {
                     title: 'Photo & Video',
@@ -92,6 +99,7 @@ import Image from 'next/image';
                       'OutDoor shoot'
                     ],
                     image: '/images/categ-4.webp',
+                    alt: 'Photo & Video Service at Carys Wedding'
                 },
                 {
                     title: 'Snacks Counter',
@@ -100,6 +108,7 @@ import Image from 'next/image';
                         'Ice Cream & Welcome Drink ( 700 Members )'
                     ],
                     image: '/images/categ-5.webp',
+                    alt: 'Snacks Counter Service at Carys Wedding'
                 },
                 {
                     title: 'Welcome Girls',
@@ -107,6 +116,7 @@ import Image from 'next/image';
                         'Warm welcome to the wedding'
                     ],
                     image: '/images/categ-6.webp',
+                    alt: 'Welcome Girls Service at Carys Wedding'
                 }
             ],
         },
@@ -124,6 +134,7 @@ import Image from 'next/image';
                         'Food for 1000 people',
                     ],
                     image: '/images/categ-1.webp',
+                    alt: 'High Class Food Service at Carys Wedding'
                 },
                 {
                     title: 'DJ Setup',
@@ -133,6 +144,7 @@ import Image from 'next/image';
                         'Dance Floor'
                     ],
                     image: '/images/categ-2.webp',
+                    alt: 'DJ Setup Service at Carys Wedding'
                 },
                 {
                     title: 'Stage Decor',
@@ -140,6 +152,7 @@ import Image from 'next/image';
                         'Design your dream decor here',
                     ],
                     image: '/images/categ-3.webp',
+                    alt: 'Stage Decor Service at Carys Wedding'
                 },
                 {
                     title: 'Photo & Video',
@@ -148,6 +161,7 @@ import Image from 'next/image';
                       'Wedding Album - 2 ( upto 300 Photos )'
                     ],
                     image: '/images/categ-4.webp',
+                    alt: 'Photo & Video Service at Carys Wedding'
                 },
                 {
                     title: 'Snacks Counter',
@@ -156,6 +170,7 @@ import Image from 'next/image';
                         'Ice Cream & Welcome Drink ( 1000 Members )'
                     ],
                     image: '/images/categ-5.webp',
+                    alt: 'Snacks Counter Service at Carys Wedding'
                 },
                 {
                     title: 'Welcome Girls',
@@ -163,6 +178,7 @@ import Image from 'next/image';
                         'Warm welcome to the wedding'
                     ],
                     image: '/images/categ-6.webp',
+                    alt: 'Welcome Girls Service at Carys Wedding'
                 },
                 {
                     title: 'Wedding Dance',
@@ -170,6 +186,7 @@ import Image from 'next/image';
                         'Special Dance Performance'
                     ],
                     image: '/images/categ-7.webp',
+                    alt: 'Wedding Dance Service at Carys Wedding'
                 },
                 {
                     title: 'Chenda Melam',
@@ -177,6 +194,7 @@ import Image from 'next/image';
                         'Grand welcome with Chenda Melam'
                     ],
                     image: '/images/categ-8.webp',
+                    alt: 'Chenda Melam Service at Carys Wedding'
                 }
             ],
         },

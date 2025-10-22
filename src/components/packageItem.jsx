@@ -70,7 +70,7 @@ const MotionImage = useMemo(() => motion(Image), []);
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: .4 + idx * 0.1}}
                     src={service.image}
-                    alt={service.title} 
+                    alt={service.alt} 
                    fill
                    loading='lazy'
                   className=" object-fit-cover rounded-[32px]"/>

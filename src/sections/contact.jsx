@@ -112,7 +112,7 @@ const Contact = React.memo(({ isMobile }) => {
           className="flex justify-center    md:flex w-full">
             <Image
               src="/images/contact-img.webp" 
-              alt="Contact Us"
+              alt="wedding planner discussing with a couple"
               width={440}
               height={450}
               className=" md:block   " 

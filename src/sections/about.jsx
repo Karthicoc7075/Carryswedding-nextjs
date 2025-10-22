@@ -25,7 +25,7 @@ const About = React.memo(() => {
            
               <Image
                 src={'/images/about-image.webp'}
-                alt="About Us"
+                alt="Balaji Ragupathi - Event Director at Carys Wedding"
                 width={250}
                 height={250}
                 className="relative z-10 w-[200px] h-[260px]  sm:w-[220px] sm:h-[290px]  rounded-r-[100px] object-cover mx-auto"

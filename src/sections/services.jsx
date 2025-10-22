@@ -7,31 +7,37 @@ const services = [
     id: 1,
     title: "Photography",
     image: "/images/photograph.webp",
+    alt: "Wedding Photography Service  at Carys Wedding"
   },
   {
     id: 2,
     title: "Catering Services",
     image: "/images/catering.webp",
+    alt: "Wedding Catering Service at Carys Wedding"
   },
   {
     id: 3,
     title: "DJ & Entertainment",
     image: "/images/dj.webp",
+    alt: "Wedding DJ & Entertainment Service at Carys Wedding"
   },
   {
     id: 4,
     title: "Stage Decoration",
     image: "/images/stageDecor.webp",
+    alt: "Wedding Stage Decoration Service at Carys Wedding"
   },
   {
     id: 5,
     title: "Snacks Counter",
     image: "/images/snack.webp",
+    alt: "Wedding Snacks Counter Service at Carys Wedding"
   },
   {
     id: 6,
     title: "Traditional Chenda Melam",
     image: "/images/chendaMelam.webp",
+    alt: "Traditional Chenda Melam Service at Carys Wedding"
   },
 ];
 
@@ -49,15 +55,13 @@ const ServicesSection = React.memo(({ isMobile }) => {
     if (!scrollContainer) return;
 
     const animate = (currentTime) => {
-      const deltaTime = (currentTime - lastTimeRef.current) / 1000; // seconds
+      const deltaTime = (currentTime - lastTimeRef.current) / 1000; 
       lastTimeRef.current = currentTime;
 
-      const speed = 50; // pixels per second
+      const speed = 50;
       scrollContainer.scrollLeft += speed * deltaTime;
 
       const singleListWidth = scrollContainer.scrollWidth / 2;
-
-      // Reset to start when halfway scrolled (i.e., original list fully passed)
       if (scrollContainer.scrollLeft >= singleListWidth) {
         scrollContainer.scrollLeft = 0;
       }
@@ -122,7 +126,7 @@ const ServicesSection = React.memo(({ isMobile }) => {
                   <div className="relative w-[250px] h-[320px] mb-4 bg-gray-100 min-h-[200px] sm:w-[190px] sm:h-[300px] md:w-[240px] md:h-[330px] rounded-[16px] overflow-hidden ">
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={service.alt}
                     fill
                     className="object-cover rounded-[16px]"
                     sizes="(max-width: 768px) 190px, 240px"
